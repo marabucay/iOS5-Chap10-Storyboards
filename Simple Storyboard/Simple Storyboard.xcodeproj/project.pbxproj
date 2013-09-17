@@ -15,6 +15,7 @@
 		003AE90817E82D4900E26CD3 /* BIDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 003AE90717E82D4900E26CD3 /* BIDAppDelegate.m */; };
 		003AE90B17E82D4900E26CD3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003AE90917E82D4900E26CD3 /* MainStoryboard.storyboard */; };
 		003AE90E17E82D4900E26CD3 /* BIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003AE90D17E82D4900E26CD3 /* BIDViewController.m */; };
+		003AE91617E8321700E26CD3 /* BIDTaskListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003AE91517E8321700E26CD3 /* BIDTaskListController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		003AE90A17E82D4900E26CD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		003AE90C17E82D4900E26CD3 /* BIDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BIDViewController.h; sourceTree = "<group>"; };
 		003AE90D17E82D4900E26CD3 /* BIDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BIDViewController.m; sourceTree = "<group>"; };
+		003AE91417E8321700E26CD3 /* BIDTaskListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIDTaskListController.h; sourceTree = "<group>"; };
+		003AE91517E8321700E26CD3 /* BIDTaskListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIDTaskListController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 				003AE90C17E82D4900E26CD3 /* BIDViewController.h */,
 				003AE90D17E82D4900E26CD3 /* BIDViewController.m */,
 				003AE8FE17E82D4900E26CD3 /* Supporting Files */,
+				003AE91417E8321700E26CD3 /* BIDTaskListController.h */,
+				003AE91517E8321700E26CD3 /* BIDTaskListController.m */,
 			);
 			path = "Simple Storyboard";
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 				003AE90417E82D4900E26CD3 /* main.m in Sources */,
 				003AE90817E82D4900E26CD3 /* BIDAppDelegate.m in Sources */,
 				003AE90E17E82D4900E26CD3 /* BIDViewController.m in Sources */,
+				003AE91617E8321700E26CD3 /* BIDTaskListController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

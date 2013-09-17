@@ -32,7 +32,7 @@
 		003AE94017E8410700E26CD3 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		003AE94617E8463100E26CD3 /* BIDTaskListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIDTaskListController.h; sourceTree = "<group>"; };
 		003AE94717E8463100E26CD3 /* BIDTaskListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIDTaskListController.m; sourceTree = "<group>"; };
-		003AE94A17E8485600E26CD3 /* BIDTaskDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIDTaskDetailController.h; sourceTree = "<group>"; };
+		003AE94A17E8485600E26CD3 /* BIDTaskDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = BIDTaskDetailController.h; sourceTree = "<group>"; };
 		003AE94B17E8485600E26CD3 /* BIDTaskDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIDTaskDetailController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

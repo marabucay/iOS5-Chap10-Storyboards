@@ -46,6 +46,20 @@
     [super viewDidLoad];
 }
 */
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if ([delegate respondsToSelector:@selector(setEditedSelection:)]) {
+        // finish editing
+        [textView endEditing:YES];
+        // prepare selection info
+        NSIndexPath *indexPath = [selection objectForKey:@"indexPath"];
+        id object = textView.text;
+        NSDictionary *editedSelection = [NSDictionary dictionaryWithObjectsAndKeys:
+                                         indexPath, @"indexPath",object, @"object",
+                                         nil];
+        [delegate setValue:editedSelection forKey:@"editedSelection"];
+    }
+}
 
 - (void)viewDidUnload
 {

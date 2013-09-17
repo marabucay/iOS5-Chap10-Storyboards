@@ -9,11 +9,13 @@
 #import "BIDTaskListController.h"
 
 @interface BIDTaskListController ()
-@property (strong, nonatomic) NSArray *tasks;
+@property (strong, nonatomic) NSMutableArray *tasks;
+@property (copy, nonatomic) NSDictionary *editedSelection;
 @end
 
 @implementation BIDTaskListController
 @synthesize tasks;
+@synthesize editedSelection;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -38,7 +40,7 @@
 {
     [super viewDidLoad];
 
-    self.tasks = [NSArray arrayWithObjects:
+    self.tasks = [NSMutableArray arrayWithObjects:
                   @"Walk the dog",
                   @"URGENT:Buy milk",
                   @"Clean hidden lair",
@@ -69,8 +71,7 @@
     [super viewDidAppear:animated];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 }
 
@@ -184,6 +185,16 @@
                                    object, @"object",
                                    nil];
         [destination setValue:selection forKey:@"selection"];
+    }
+}
+- (void)setEditedSelection:(NSDictionary *)dict {
+    if (![dict isEqual:editedSelection]) {
+        editedSelection = dict;
+        NSIndexPath *indexPath = [dict objectForKey:@"indexPath"];
+        id newValue = [dict objectForKey:@"object"];
+        [tasks replaceObjectAtIndex:indexPath.row withObject:newValue];
+        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                              withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
 @end

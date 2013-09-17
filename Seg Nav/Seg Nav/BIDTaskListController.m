@@ -170,5 +170,20 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UIViewController *destination = segue.destinationViewController;
+    if ([destination respondsToSelector:@selector(setDelegate:)]) {
+        [destination setValue:self forKey:@"delegate"];
+    }
+    if ([destination respondsToSelector:@selector(setSelection:)]) {
+        // prepare selection info
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        id object = [self.tasks objectAtIndex:indexPath.row];
+        NSDictionary *selection = [NSDictionary dictionaryWithObjectsAndKeys:
+                                   indexPath, @"indexPath",
+                                   object, @"object",
+                                   nil];
+        [destination setValue:selection forKey:@"selection"];
+    }
+}
 @end

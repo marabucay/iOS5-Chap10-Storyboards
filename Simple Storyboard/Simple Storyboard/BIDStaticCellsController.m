@@ -1,19 +1,17 @@
 //
-//  BIDTaskListController.m
+//  BIDStaticCellsController.m
 //  Simple Storyboard
 //
 //  Created by Maria Alice C. Lim on 9/17/13.
 //  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
-#import "BIDTaskListController.h"
+#import "BIDStaticCellsController.h"
 
-@interface BIDTaskListController ()
-@property (strong, nonatomic) NSArray *tasks;
-@end
 
-@implementation BIDTaskListController
-@synthesize tasks;
+@implementation BIDStaticCellsController
+@synthesize dateLabel;
+@synthesize timeLabel;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -38,25 +36,20 @@
 {
     [super viewDidLoad];
 
-    self.tasks = [NSArray arrayWithObjects:
-                  @"Walk the dog",
-                  @"URGENT:Buy milk",
-                  @"Clean hidden lair",
-                  @"Invent miniature dolphins",
-                  @"Find new henchmen",
-                  @"Get revenge on do-gooder heroes",
-                  @"URGENT: Fold laundry",
-                  @"Hold entire world hostage",
-                  @"Manicure",
-                  nil];
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+ 
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidUnload
 {
+    [self setDateLabel:nil];
+    [self setTimeLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-    self.tasks = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -89,32 +82,28 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [tasks count];
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *identifier = nil;
-    NSString *task = [self.tasks objectAtIndex:indexPath.row];
-    NSRange urgentRange = [task rangeOfString:@"URGENT"];
-    if (urgentRange.location == NSNotFound) {
-        identifier = @"plainCell";
-    } else {
-        identifier = @"attentionCell";
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     // Configure the cell...
-    
-    UILabel *cellLabel = (UILabel *)[cell viewWithTag:1];
-    cellLabel.text = task;
     
     return cell;
 }
